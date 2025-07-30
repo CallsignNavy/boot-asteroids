@@ -42,8 +42,8 @@ def main():
 
         updatable.update(dt)
 
-        for sprite in asteroids:
-            if sprite.collision(player) == True:
+        for asteroid in asteroids:
+            if asteroid.collision(player) == True:
                 print("Game over!")
                 exit()
 
