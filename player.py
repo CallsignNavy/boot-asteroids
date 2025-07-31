@@ -32,10 +32,6 @@ class Player(CircleShape):
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
-    def shoot(self):
-        shot = Shot(self.position.x, self.position.y)
-        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
-
         #player rotation with key presses
         if keys[pygame.K_a]:
             self.rotate(-dt)
@@ -51,3 +47,8 @@ class Player(CircleShape):
         #player shoots with key press
         if keys[pygame.K_SPACE]:
             self.shoot()
+
+
+    def shoot(self):
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
